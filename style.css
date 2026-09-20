@@ -1,0 +1,41 @@
+body {
+  background: linear-gradient(lightskyblue, plum);
+  min-height: 100vh;
+  font-family: "Courier New", monospace
+}
+h1 {
+  color: white;
+  text-align: center;
+}
+.intro {
+  background-color: white;
+  color: black;
+  border: 2px dashed darkslateblue;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 40px 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,1);
+}
+body {
+  max-width: 700px;
+  margin: 0 auto;
+}
+a {
+  color: mediumvioletred;
+}
+a:hover {
+  background-color: gold;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+}
+
+.centred {
+  display: flex;
+  justify-content: center;
+}
