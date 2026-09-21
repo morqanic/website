@@ -80,6 +80,7 @@ let changeTitle = () => {
   //   changed = "☆"; 
   // }
   console.log(title)
+  // strings are immutable lol
   titleElem.text = title.slice(0, change) + changed + title.slice(change + 1, title.length);
   
   setTimeout(changeTitle, 1000 + Math.random() * 10000);
