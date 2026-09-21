@@ -63,3 +63,25 @@ document.addEventListener('mousemove', (event) => {
 // }
 
 // scroll();
+
+// inspired by tommie.computer
+const titleElem = document.getElementsByTagName("title")[0];
+let i = 0;
+let changeTitle = () => {
+  let title = titleElem.text;
+  let change = Math.floor(Math.random() * titleElem.text.length);
+  changed = title[change].toLowerCase();
+  if (title[change] == title[change].toLowerCase()) {
+    changed = title[change].toUpperCase();
+  }
+  // if (title[change] == '☆') {
+  //   changed = "★"; 
+  // } else if (title[change] == `★`) {
+  //   changed = "☆"; 
+  // }
+  console.log(title)
+  titleElem.text = title.slice(0, change) + changed + title.slice(change + 1, title.length);
+  
+  setTimeout(changeTitle, 1000 + Math.random() * 10000);
+};
+setTimeout(changeTitle, 5000);
