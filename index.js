@@ -16,12 +16,12 @@ let star = (x, y) => {
   return newStar;
 }
 
-lastStar = {
+let lastStar = {
   "x": 0,
   "y": 0
 };
 
-mouse = {
+let mouse = {
   "x": 0,
   "y": 0
 };
@@ -44,3 +44,22 @@ document.addEventListener('mousemove', (event) => {
     }, 25);
   }
 });
+
+// let scrollY = 0;
+// let currScroll = 0;
+// let scroll = () => {
+//   let elements = document.getElementsByClassName("stripes");
+//   currScroll += 1;
+//   for (let e of elements) {
+//     e.style.backgroundPositionX = currScroll + "px";
+//     for (let i = 0; i < Math.abs(scrollY - window.scrollY); i+= 1) {
+//       console.log(i);
+//       currScroll += 1;
+//       e.style.backgroundPositionX = currScroll + "px";
+//     }
+//   }
+//   scrollY = window.scrollY;
+//   setTimeout(() => {scroll()}, 100);
+// }
+
+// scroll();
