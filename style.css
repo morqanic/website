@@ -42,13 +42,12 @@ a:hover {
   flex: 1;
 }
 
-
-
 .centred {
   display: flex;
   justify-content: center;
 }
 
+/* stolen from https://tommie.computer/ */
 .stripes {
   background: repeating-linear-gradient(45deg, #fffdf6, #fffdf6 20px, #d3e4ff 20px, #d3e4ff 40px);
   background-size: 56px 56px;
