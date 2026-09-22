@@ -1,5 +1,6 @@
 body {
   background: linear-gradient(rgb(91, 192, 255), plum);
+  background-attachment: fixed;
   min-height: 100vh;
   font-family: "Courier New", monospace
 }
@@ -13,7 +14,6 @@ h1 {
   border: 2px dashed darkslateblue;
   border-radius: 12px;
   padding: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,1);
 }
 body {
   max-width: 800px;
@@ -53,4 +53,25 @@ a:hover {
   background-size: 56px 56px;
   padding: 5px;
   text-align: center;
+}
+
+.center {
+  align-items: center;
+}
+
+/* https://www.w3schools.com/css/css3_images.asp */
+.polaroid {
+  padding: 10px;
+  background-color: white;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.polaroid img {
+  width: 300px;
+}
+
+.box-shadow {
+  box-shadow: 0 4px 8px rgba(0,0,0,1);
 }
