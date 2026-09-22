@@ -68,7 +68,7 @@ let foreverScroll = () => {
     e.style.backgroundPositionX = currScroll + "px";
   }
 }
-setInterval(foreverScroll, 64);
+setInterval(foreverScroll, 40);
 
 document.onscroll = scroll;
 
