@@ -49,7 +49,8 @@ let scrollY = 0;
 let currScroll = 0;
 let scroll = () => {
   let elements = document.getElementsByClassName("stripes");
-  for (let i = 0; i < Math.abs(scrollY - window.scrollY) / 2; i+= 1) {
+  for (let i = 0; i < Math.abs(scrollY - window.scrollY) / 16; i+= 1) {
+    console.log( Math.abs(scrollY - window.scrollY) / 8)
     for (let e of elements) {
       if (scrollY - window.scrollY <= 0) {
         currScroll = currScroll + 1 % 40;
