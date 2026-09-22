@@ -45,24 +45,26 @@ document.addEventListener('mousemove', (event) => {
   }
 });
 
-// let scrollY = 0;
-// let currScroll = 0;
-// let scroll = () => {
-//   let elements = document.getElementsByClassName("stripes");
-//   currScroll += 1;
-//   for (let e of elements) {
-//     e.style.backgroundPositionX = currScroll + "px";
-//     for (let i = 0; i < Math.abs(scrollY - window.scrollY); i+= 1) {
-//       console.log(i);
-//       currScroll += 1;
-//       e.style.backgroundPositionX = currScroll + "px";
-//     }
-//   }
-//   scrollY = window.scrollY;
-//   setTimeout(() => {scroll()}, 100);
-// }
+let scrollY = 0;
+let currScroll = 0;
+let scroll = () => {
+  let elements = document.getElementsByClassName("stripes");
+  console.log( Math.abs(scrollY - window.scrollY) )
+  currScroll += 1;
+  for (let i = 0; i < Math.abs(scrollY - window.scrollY) + 1; i+= 1) {
+    for (let e of elements) {
+      if (scrollY - window.scrollY <= 0) {
+        currScroll = currScroll + 1 % 40;
+      } else {
+        currScroll = currScroll - 1 % 40;
+      }
+      e.style.backgroundPositionX = currScroll + "px";
+    }
+  }
+  scrollY = window.scrollY;
+}
 
-// scroll();
+document.onscroll = scroll;
 
 // inspired by tommie.computer
 const titleElem = document.getElementsByTagName("title")[0];
