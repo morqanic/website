@@ -1,6 +1,5 @@
 body {
   background: linear-gradient(rgb(91, 192, 255), plum);
-  background-attachment: fixed;
   min-height: 100vh;
   font-family: "Courier New", monospace
 }
