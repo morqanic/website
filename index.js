@@ -49,9 +49,7 @@ let scrollY = 0;
 let currScroll = 0;
 let scroll = () => {
   let elements = document.getElementsByClassName("stripes");
-  console.log( Math.abs(scrollY - window.scrollY) )
-  currScroll += 1;
-  for (let i = 0; i < Math.abs(scrollY - window.scrollY) + 1; i+= 1) {
+  for (let i = 0; i < Math.abs(scrollY - window.scrollY) / 2; i+= 1) {
     for (let e of elements) {
       if (scrollY - window.scrollY <= 0) {
         currScroll = currScroll + 1 % 40;
@@ -63,6 +61,14 @@ let scroll = () => {
   }
   scrollY = window.scrollY;
 }
+let foreverScroll = () => {
+  let elements = document.getElementsByClassName("stripes");
+  currScroll = currScroll + 1 % 40;
+  for (let e of elements) {
+    e.style.backgroundPositionX = currScroll + "px";
+  }
+}
+setInterval(foreverScroll, 64);
 
 document.onscroll = scroll;
 
