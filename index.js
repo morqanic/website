@@ -45,25 +45,25 @@ document.addEventListener('mousemove', (event) => {
   }
 });
 
+let stripeLen = 56;
 let scrollY = 0;
 let currScroll = 0;
 let scroll = () => {
   let elements = document.getElementsByClassName("stripes");
-  for (let i = 0; i < Math.sqrt(Math.abs(scrollY - window.scrollY)) / 2; i+= 1) {
-    for (let e of elements) {
-      if (scrollY - window.scrollY <= 0) {
-        currScroll = currScroll + 1 % 40;
-      } else {
-        currScroll = currScroll - 1 % 40;
-      }
-      e.style.backgroundPositionX = currScroll + "px";
+  for (let e of elements) {
+    if (scrollY - window.scrollY <= 0) {
+      currScroll = (currScroll + (Math.sqrt(Math.abs(scrollY - window.scrollY)) / 2)) % stripeLen;
+    } else {
+      currScroll = (currScroll - (Math.sqrt(Math.abs(scrollY - window.scrollY)) / 2)) % stripeLen;
     }
+    e.style.backgroundPositionX = currScroll + "px";
   }
   scrollY = window.scrollY;
 }
+
 let foreverScroll = () => {
   let elements = document.getElementsByClassName("stripes");
-  currScroll = currScroll + 1 % 40;
+  currScroll = (currScroll + 1) % stripeLen;
   for (let e of elements) {
     e.style.backgroundPositionX = currScroll + "px";
   }
