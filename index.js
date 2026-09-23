@@ -52,7 +52,7 @@ let scroll = () => {
   let elements = document.getElementsByClassName("stripes");
   for (let e of elements) {
     if (scrollY - window.scrollY <= 0) {
-      currScroll = (currScroll + (Math.sqrt(Math.abs(scrollY - window.scrollY)) / 3)) % stripeLen;
+      currScroll = (currScroll + (Math.sqrt(Math.abs(scrollY - window.scrollY)) / 2.5)) % stripeLen;
     } else {
       currScroll = (currScroll - (Math.sqrt(Math.abs(scrollY - window.scrollY)) / 2)) % stripeLen;
     }
