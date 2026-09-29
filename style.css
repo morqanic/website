@@ -7,6 +7,12 @@ body {
 .text {
   font-family: "Comic Sans MS", "Comic Sans", sans-serif;
 }
+.image {
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
 h1 {
   color: white;
   text-align: center;
@@ -19,7 +25,7 @@ h1 {
   padding: 15px;
 }
 body {
-  max-width: 800px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 a {
@@ -72,7 +78,7 @@ a:hover {
 }
 
 .polaroid img {
-  max-width: 250px;
+  max-width: 300px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
