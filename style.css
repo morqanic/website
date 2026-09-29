@@ -70,6 +70,8 @@ a:hover {
 
 .center {
   align-items: center;
+  max-width: 800px;
+  margin: auto;
 }
 
 /* https://www.w3schools.com/css/css3_images.asp */
@@ -82,7 +84,7 @@ a:hover {
 }
 
 .polaroid img {
-  max-width: 300px;
+  max-width: 250px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
