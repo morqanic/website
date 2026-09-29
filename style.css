@@ -51,6 +51,10 @@ a:hover {
   flex: 1;
 }
 
+.columns {
+  margin-bottom: 50px;
+}
+
 .centred {
   display: flex;
   justify-content: center;
