@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a href="https://stage.trustworthy.systems/publications/theses_internal/25/Treloar%3Abe.pdf">James Thesis</a>
+  Definitions
+  <table>
+    <tr>
+      <th>Word</th>
+      <th>Meaning</th>
+    </tr>
+    <tr>
+      <td>ITP</td>
+      <td>Interactive Theorem Prover</td>
+    </tr>
+    <tr>
+      <td>HDL</td>
+      <td>hardware discriptive language, VHDL, Verilog</td>
+    </tr>
+    <tr>
+      <td>RTL</td>
+      <td>Register Transfer Level, an abstraction level you write at in HDL</td>
+    </tr>
+    <tr>
+      <td>HLS</td>
+      <td>High Level Synthesis, written in restricted form of C/C++ etc. that are compiled into RTL description in a HDL (less efficient though than human written HDL) </td>
+    </tr>
+    <tr>
+      <td>SoC</td>
+      <td>System on Chip, eg CPU, RAM, GPU on same chip, eg Apple A4 chip in phone</td>
+    </tr>
+    <tr>
+      <td>TCB</td>
+      <td>Trusted Computing Base, not possible/feasible to prove everything eg verification tool chain, compiler, operating system</td>
+    </tr>
+  </table>
+
+  <ul>
+    <li>Device drivers cause most of bugs in linux 2018-22</li>
+    <li>Device driver used for communication outside of core computer system (CPU, memory storage)</li>
+    <li>people rely on data sheets butnot necessary correct</li>
+    <li>hardware devices</li>
+    <ul>
+      <li>Serial devices (most dominant eg I2C, SPI) single bit every clock cycle vs parallel that could send a byte each clock cycle through 8 wires</li>
+      <li>I2C has 2 wires, SCL (clocl) and SDA (data) and allows for multiple host devices on same bus</li>
+      <li>Cheshire is a SoC than can be ran by synthesising it on an FPGA.</li>
+      <li>Cheshire contains many devices from the OpenTitan peripheral suite.</li>
+    </ul>
+    <li>drivers for these devices</li>
+    <ul>
+      <li>typically need an abillity to read to and write from a devices registers</li>
+      <li>Three ways to interact with a device, register polling, interrupts and direct memory access (DMA)</li>
+      <ul>
+        <li>Polling- checking status of device registers to determine if operation suceeded</li>
+        <li>Interrupts - event driven. driver registers itself with OS and Os will halt on signal from driver</li>
+        <li>DMA - access main memory through reads and writes without the CPU.</li>
+      </ul>
+    </ul>
+    <li>formal verification</li>
+    <ul>
+      <li>assurance of implementations</li>
+      <li>Model checking and deductive verification</li>
+      <ul>
+        <li>Model checking - explore all states of a finite-state model to see if systemd satisfies desired properties</li>
+        <li>Deductive Verification</li>
+        <ul>
+          <li>Interactive theorem provers (ITP) HOL4, proving specifications of the system (goals), applying techniques to simplify a goal statement to be determined true</li>
+          <li>Automatic theorem provers (ATPs) Z3, supply axioms and hopefully prove, but sometimes fails</li>
+        </ul>
+      </ul>
+    </ul>
+    <li>Hardware Verification</li>
+    <ul>
+      <li>Correctness</li>
+      <ul>
+        <li>Standard testing is on the simulation of design (not FPGA) by testing specific cases of inputs and outputs</li>
+        <li>Still possibility of failure paths not discovered, so developments in model checking based on a state machine of original design and its specifications.</li>
+        <li>Model checkers suffer from state explosion as a counter with n bits will have 2^n states.</li>
+      </ul>
+      <li>Equivalence Checking</li>
+      <ul>
+        <li>Uses a SAT solver to compare outputs to a "golden model" but this only guarantees equivalence, not correctness</li>
+      </ul>
+    </ul>
+  </ul>
+</body>
+</html>
